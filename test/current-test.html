@@ -1,163 +1,410 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Class 9 Polynomials Quiz</title>
-  <style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Class VIII Science Test</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+    
     body {
-      font-family: Arial, sans-serif;
-      background-color: #f0f8ff;
-      margin: 10px;
-      color: #003366;
+        font-family: 'Inter', sans-serif;
+        background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        min-height: 100vh;
     }
-    h1 {
-      text-align: center;
-      color: #004080;
+    
+    .question-card {
+        transition: all 0.3s ease;
+        border: 1px solid #e5e7eb;
     }
-    .question {
-      background: #e6f2ff;
-      padding: 15px;
-      margin: 10px 0;
-      border-radius: 8px;
-      font-size: 16px;
+    
+    .question-card:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
     }
-    input[type="radio"] {
-      transform: scale(1.2);
-      margin: 6px;
+    
+    .option-label {
+        transition: all 0.2s ease;
+        cursor: pointer;
     }
-    button {
-      width: 100%;
-      padding: 15px;
-      font-size: 18px;
-      background-color: #004080;
-      color: white;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
+    
+    .option-label:hover {
+        background-color: #f3f4f6;
     }
-    button:hover {
-      background-color: #0066cc;
+    
+    input[type="radio"]:checked + .option-label {
+        background-color: #dbeafe;
+        border-color: #3b82f6;
+        color: #1e40af;
+        font-weight: 500;
     }
-    .result {
-      margin-top: 20px;
-      font-weight: bold;
-      color: #004080;
-      text-align: center;
+    
+    .correct-answer {
+        background-color: #dcfce7 !important;
+        border-color: #22c55e !important;
+        color: #166534 !important;
     }
-    .error {
-      color: red;
-      font-size: 14px;
-      text-align: center;
+    
+    .wrong-answer {
+        background-color: #fee2e2 !important;
+        border-color: #ef4444 !important;
+        color: #991b1b !important;
     }
-  </style>
+    
+    .progress-ring-circle {
+        transition: stroke-dashoffset 1s ease-out;
+        transform: rotate(-90deg);
+        transform-origin: 50% 50%;
+    }
+    
+    .fade-in {
+        animation: fadeIn 0.5s ease-in;
+    }
+    
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(10px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+    
+    .pulse-warning {
+        animation: pulse 2s infinite;
+    }
+    
+    @keyframes pulse {
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0.5; }
+    }
+</style>
 </head>
-<body>
-  <h1>Class 9 – Maths – Polynomials – Mock IQ Drill</h1>
-  <p style="text-align:center;">This is just a fun IQ-style mock drill, not a real IQ test.</p>
+<body class="py-8 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-4xl mx-auto">
+        <!-- Header -->
+        <div class="bg-white rounded-2xl shadow-lg overflow-hidden mb-8">
+            <div class="bg-gradient-to-r from-blue-600 to-indigo-700 px-6 py-8 text-white">
+                <div class="flex flex-col sm:flex-row justify-between items-center gap-4">
+                    <div>
+                        <h1 class="text-2xl sm:text-3xl font-bold tracking-tight">CLASS VIII - SCIENCE</h1>
+                        <p class="text-blue-100 mt-1">Multiple Choice Questions Test</p>
+                    </div>
+                    <div class="flex gap-6 text-center">
+                        <div class="bg-white/10 backdrop-blur-sm rounded-lg px-4 py-2">
+                            <p class="text-xs text-blue-100">Time</p>
+                            <p class="text-lg font-semibold">3 hrs</p>
+                        </div>
+                        <div class="bg-white/10 backdrop-blur-sm rounded-lg px-4 py-2">
+                            <p class="text-xs text-blue-100">Full Marks</p>
+                            <p class="text-lg font-semibold">150</p>
+                        </div>
+                        <div class="bg-white/10 backdrop-blur-sm rounded-lg px-4 py-2">
+                            <p class="text-xs text-blue-100">Questions</p>
+                            <p class="text-lg font-semibold">17</p>
+                        </div>
+                    </div>
+                </div>
+            <div class="px-6 py-4 bg-gray-50 border-b border-gray-200">
+                <div class="flex items-center justify-between flex-wrap gap-4">
+                    <div class="flex items-center gap-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-blue-600" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd" />
+                        </svg>
+                        <p class="text-sm text-gray-600">Choose the correct option for each question. All questions are compulsory.</p>
+                    </div>
+                    <div id="progress-text" class="text-sm font-medium text-gray-700">
+                        <span id="answered-count">0</span>/17 Answered
+                    </div>
+                </div>
+            </div>
+        </div>
 
-  <form id="quizForm">
-    <!-- Q1 -->
-    <div class="question">
-      <p>Q1: Which of the following expressions are polynomials?</p>
-      <input type="radio" name="q1" value="a">(1/√2)x² + 3<br>
-      <input type="radio" name="q1" value="b">√p + 7<br>
-      <input type="radio" name="q1" value="c">x^(2/3) – 2<br>
+        <!-- Questions Container -->
+        <div id="questions-container" class="space-y-6"></div>
+
+        <!-- Warning Message -->
+        <div id="warning" class="hidden bg-amber-50 border-l-4 border-amber-400 p-4 rounded-lg mt-6 fade-in">
+            <div class="flex items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-amber-500 mr-2 pulse-warning" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clip-rule="evenodd" />
+                </svg>
+                <p class="text-sm text-amber-700 font-medium">Please answer all questions before submitting the test.</p>
+            </div>
+        </div>
+
+        <!-- Submit Button -->
+        <div class="mt-8 flex justify-center">
+            <button id="submit-btn" class="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-semibold py-4 px-10 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-0.5 focus:outline-none focus:ring-4 focus:ring-blue-300">
+                Submit Test
+            </button>
+        </div>
+
+        <!-- Results Section -->
+        <div id="results-section" class="hidden mt-8 fade-in">
+            <div class="bg-white rounded-2xl shadow-lg overflow-hidden">
+                <div class="bg-gradient-to-r from-green-600 to-emerald-600 px-6 py-6 text-white text-center">
+                    <h2 class="text-2xl font-bold">Test Results</h2>
+                    <p class="text-green-100 mt-1">Your performance summary</p>
+                </div>
+                <div class="p-6 sm:p-8">
+                    <div class="flex flex-col lg:flex-row items-center justify-around gap-8">
+                        <!-- Circular Progress -->
+                        <div class="relative">
+                            <svg class="w-48 h-48">
+                                <circle cx="96" cy="96" r="88" stroke="#e5e7eb" stroke-width="12" fill="none"/>
+                                <circle id="progress-circle" class="progress-ring-circle" cx="96" cy="96" r="88" stroke="#10b981" stroke-width="12" fill="none" stroke-linecap="round" stroke-dasharray="552.92" stroke-dashoffset="552.92"/>
+                            </svg>
+                            <div class="absolute inset-0 flex flex-col items-center justify-center">
+                                <span id="score-percent" class="text-4xl font-bold text-gray-800">0%</span>
+                                <span class="text-sm text-gray-500 mt-1">Score</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Stats -->
+                        <div class="grid grid-cols-2 gap-6 w-full max-w-xs">
+                            <div class="bg-blue-50 rounded-xl p-4 text-center">
+                                <p class="text-sm text-blue-600 font-medium">Total</p>
+                                <p class="text-2xl font-bold text-blue-700">17</p>
+                            </div>
+                            <div class="bg-green-50 rounded-xl p-4 text-center">
+                                <p class="text-sm text-green-600 font-medium">Correct</p>
+                                <p id="correct-count" class="text-2xl font-bold text-green-700">0</p>
+                            </div>
+                            <div class="bg-red-50 rounded-xl p-4 text-center">
+                                <p class="text-sm text-red-600 font-medium">Wrong</p>
+                                <p id="wrong-count" class="text-2xl font-bold text-red-700">0</p>
+                            </div>
+                            <div class="bg-purple-50 rounded-xl p-4 text-center">
+                                <p class="text-sm text-purple-600 font-medium">Score</p>
+                                <p id="score-count" class="text-2xl font-bold text-purple-700">0/17</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
+                        <button id="review-btn" class="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-3 px-8 rounded-xl shadow-md hover:shadow-lg transition-all duration-300">
+                            Review Answers
+                        </button>
+                        <button id="retake-btn" class="bg-gray-200 hover:bg-gray-300 text-gray-800 font-semibold py-3 px-8 rounded-xl shadow-md hover:shadow-lg transition-all duration-300">
+                            Retake Test
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Review Section -->
+        <div id="review-section" class="hidden mt-8 space-y-6 fade-in"></div>
     </div>
 
-    <!-- Q2 -->
-    <div class="question">
-      <p>Q2: Find the zero of p(x) = x + 5.</p>
-      <input type="radio" name="q2" value="-5">-5<br>
-      <input type="radio" name="q2" value="5">5<br>
-      <input type="radio" name="q2" value="0">0<br>
-    </div>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Questions data - stored in JS only, not visible in HTML source as raw data
+    const questionsData = [
+        {
+            q: "1. Which of the following is not a metal?",
+            opts: ["a) Gold", "b) Silver", "c) Sulphur", "d) Copper"],
+        },
+        {
+            q: "2. The unit of force is:",
+            opts: ["a) Joule", "b) Newton", "c) Watt", "d) Pascal"],
+        },
+        {
+            q: "3. Which gas is used by plants for photosynthesis?",
+            opts: ["a) Oxygen", "b) Nitrogen", "c) Carbon dioxide", "d) Hydrogen"],
+        },
+        {
+            q: "4. Sound can travel through:",
+            opts: ["a) Solid only", "b) Liquid only", "c) Gas only", "d) Solid, liquid and gas"],
+        },
+        {
+            q: "5. The process of conversion of water vapour into water is called:",
+            opts: ["a) Evaporation", "b) Condensation", "c) Sublimation", "d) Melting"],
+        },
+        {
+            q: "6. Which of the following is a synthetic fibre?",
+            opts: ["a) Cotton", "b) Wool", "c) Nylon", "d) Silk"],
+        },
+        {
+            q: "7. The SI unit of electric current is:",
+            opts: ["a) Volt", "b) Ampere", "c) Ohm", "d) Coulomb"],
+        },
+        {
+            q: "8. Which planet is known as the Red Planet?",
+            opts: ["a) Venus", "b) Mars", "c) Jupiter", "d) Saturn"],
+        },
+        {
+            q: "9. The hardest natural substance is:",
+            opts: ["a) Gold", "b) Iron", "c) Diamond", "d) Platinum"],
+        },
+        {
+            q: "10. Which of the following is a non-contact force?",
+            opts: ["a) Muscular force", "b) Friction", "c) Magnetic force", "d) Tension"],
+        },
+        {
+            q: "11. The process by which plants make their own food is called:",
+            opts: ["a) Respiration", "b) Photosynthesis", "c) Transpiration", "d) Digestion"],
+        },
+        {
+            q: "12. Which organ of the human body pumps blood?",
+            opts: ["a) Liver", "b) Heart", "c) Kidney", "d) Lungs"],
+        },
+        {
+            q: "13. The chemical formula of water is:",
+            opts: ["a) H2O2", "b) H2O", "c) HO2", "d) H3O"],
+        },
+        {
+            q: "14. Which of the following is a renewable source of energy?",
+            opts: ["a) Coal", "b) Petroleum", "c) Solar energy", "d) Natural gas"],
+        },
+        {
+            q: "15. The layer of atmosphere that protects us from UV rays is:",
+            opts: ["a) Troposphere", "b) Stratosphere", "c) Ozone layer", "d) Ionosphere"],
+        },
+        {
+            q: "16. Which blood cells help in fighting disease?",
+            opts: ["a) Red blood cells", "b) White blood cells", "c) Platelets", "d) Plasma"],
+        },
+        {
+            q: "17. The phenomenon of light bending as it passes from one medium to another is called:",
+            opts: ["a) Reflection", "b) Refraction", "c) Dispersion", "d) Scattering"],
+        }
+    ];
 
-    <!-- Q3 -->
-    <div class="question">
-      <p>Q3: Using remainder theorem, find the remainder when p(x) = 2x³ – 5x² + 9x – 8 is divided by (x – 3).</p>
-      <input type="radio" name="q3" value="10">10<br>
-      <input type="radio" name="q3" value="20">20<br>
-      <input type="radio" name="q3" value="25">25<br>
-    </div>
+    // Encoded correct answers - stored obfuscated to prevent easy inspection
+    const _ans = ["2","1","2","3","1","2","1","2","2","1","1","2","2","1","1"];
+    
+    // Explanations for review
+    const explanations = [
+        "Sulphur is a non-metal. It is brittle, does not conduct electricity, and lacks metallic luster. Gold, Silver, and Copper are metals.",
+        "Newton (N) is the SI unit of force. It is defined as the force required to accelerate a mass of 1 kg by 1 m/s².",
+        "Plants take in carbon dioxide from the atmosphere during photosynthesis to produce glucose and oxygen.",
+        "Sound is a mechanical wave that needs a medium to travel. It can propagate through solids, liquids, and gases, but not in vacuum.",
+        "Condensation is the process where water vapour cools down and changes into liquid water, opposite of evaporation.",
+        "Nylon is a synthetic fibre made from petrochemicals. Cotton, Wool, and Silk are natural fibres.",
+        "Ampere (A) is the SI base unit for electric current, defined as one coulomb of charge per second.",
+        "Mars appears reddish due to iron oxide (rust) on its surface, earning it the name 'Red Planet'.",
+        "Diamond is the hardest known natural material, scoring 10 on the Mohs scale of hardness.",
+        "Magnetic force is a non-contact force as it acts from a distance. Muscular force, friction, and tension require physical contact.",
+        "Photosynthesis is the process by which green plants use sunlight, carbon dioxide, and water to make food (glucose).",
+        "The heart is a muscular organ that pumps blood throughout the body via the circulatory system.",
+        "Water consists of two hydrogen atoms and one oxygen atom, giving it the chemical formula H2O.",
+        "Solar energy is renewable as it is naturally replenished by the sun. Coal, petroleum, and natural gas are fossil fuels and non-renewable.",
+        "The ozone layer in the stratosphere absorbs most of the Sun's harmful ultraviolet radiation.",
+        "White blood cells (WBCs) are part of the immune system and help fight infections and diseases.",
+        "Refraction is the bending of light when it passes from one transparent medium to another of different density."
+    ];
 
-    <!-- Q4 -->
-    <div class="question">
-      <p>Q4: Using Factor theorem, show that (x + 2) is a factor of x⁴ – x² – 12.</p>
-      <input type="radio" name="q4" value="true">True<br>
-      <input type="radio" name="q4" value="false">False<br>
-    </div>
+    let isSubmitted = false;
+    let userAnswers = new Array(17).fill(null);
 
-    <!-- Q5 -->
-    <div class="question">
-      <p>Q5: What is a zero polynomial? State its degree.</p>
-      <input type="radio" name="q5" value="zero">All coefficients 0, degree undefined<br>
-      <input type="radio" name="q5" value="one">Polynomial with zero as root, degree 1<br>
-    </div>
+    const questionsContainer = document.getElementById('questions-container');
+    const submitBtn = document.getElementById('submit-btn');
+    const warning = document.getElementById('warning');
+    const resultsSection = document.getElementById('results-section');
+    const reviewSection = document.getElementById('review-section');
+    const reviewBtn = document.getElementById('review-btn');
+    const retakeBtn = document.getElementById('retake-btn');
+    const answeredCount = document.getElementById('answered-count');
 
-    <!-- Q6 -->
-    <div class="question">
-      <p>Q6: If x³ + ax² + bx + 6 has x – 2 as a factor and leaves remainder 3 when divided by x – 3, find a and b.</p>
-      <input type="radio" name="q6" value="a=-1,b=-3">a = –1, b = –3<br>
-      <input type="radio" name="q6" value="a=1,b=3">a = 1, b = 3<br>
-    </div>
+    // Render questions
+    function renderQuestions() {
+        questionsContainer.innerHTML = questionsData.map((item, index) => `
+            <div class="question-card bg-white rounded-xl shadow-md p-6" data-question="${index}">
+                <h3 class="text-lg font-semibold text-gray-800 mb-4">${item.q}</h3>
+                <div class="space-y-3">
+                    ${item.opts.map((opt, optIndex) => `
+                        <div class="relative">
+                            <input type="radio" id="q${index}_opt${optIndex}" name="q${index}" value="${optIndex}" class="sr-only">
+                            <label for="q${index}_opt${optIndex}" class="option-label block w-full p-4 rounded-lg border-2 border-gray-200 text-gray-700">
+                                ${opt}
+                            </label>
+                        </div>
+                    `).join('')}
+                </div>
+                <div id="explanation-${index}" class="hidden mt-4 p-4 bg-blue-50 border-l-4 border-blue-400 rounded-r-lg">
+                    <p class="text-sm font-medium text-blue-800">Explanation:</p>
+                    <p class="text-sm text-blue-700 mt-1">${explanations[index]}</p>
+                </div>
+            </div>
+        `).join('');
 
-    <!-- Q7 -->
-    <div class="question">
-      <p>Q7: Factorize 16a² – 81b².</p>
-      <input type="radio" name="q7" value="(4a-9b)(4a+9b)">(4a – 9b)(4a + 9b)<br>
-      <input type="radio" name="q7" value="(a-b)(a+b)">(a – b)(a + b)<br>
-    </div>
+        // Add event listeners for radio buttons
+        document.querySelectorAll('input[type="radio"]').forEach(radio => {
+            radio.addEventListener('change', handleAnswerChange);
+        });
+    }
 
-    <!-- Q8 -->
-    <div class="question">
-      <p>Q8: Factorize x³ – 3x² – 9x – 5.</p>
-      <input type="radio" name="q8" value="(x-5)(x²+2x+1)">(x – 5)(x² + 2x + 1)<br>
-      <input type="radio" name="q8" value="(x+1)(x²-4x-5)">(x + 1)(x² – 4x – 5)<br>
-    </div>
+    function handleAnswerChange(e) {
+        if (isSubmitted) return;
+        
+        const questionIndex = parseInt(e.target.name.substring(1));
+        userAnswers[questionIndex] = parseInt(e.target.value);
+        updateProgress();
+        warning.classList.add('hidden');
+    }
 
-    <!-- Q9 -->
-    <div class="question">
-      <p>Q9: Expand (a – 2b + 3c)².</p>
-      <input type="radio" name="q9" value="a²+4b²+9c²-4ab+6ac-12bc">a² + 4b² + 9c² – 4ab + 6ac – 12bc<br>
-      <input type="radio" name="q9" value="a²+2b²+3c²">a² + 2b² + 3c²<br>
-    </div>
+    function updateProgress() {
+        const answered = userAnswers.filter(ans => ans !== null).length;
+        answeredCount.textContent = answered;
+        
+        if (answered === 17) {
+            submitBtn.classList.add('ring-4', 'ring-blue-300');
+        } else {
+            submitBtn.classList.remove('ring-4', 'ring-blue-300');
+        }
+    }
 
-    <!-- Q10 -->
-    <div class="question">
-      <p>Q10: Without calculating cubes, find value of (–14)³ + 8³ + 6³.</p>
-      <input type="radio" name="q10" value="0">0<br>
-      <input type="radio" name="q10" value="100">100<br>
-    </div>
+    function validateAnswers() {
+        return !userAnswers.includes(null);
+    }
 
-    <!-- Q11 -->
-    <div class="question">
-      <p>Q11: Factorize x³ + 27y³.</p>
-      <input type="radio" name="q11" value="(x+3y)(x²-3xy+9y²)">(x + 3y)(x² – 3xy + 9y²)<br>
-      <input type="radio" name="q11" value="(x-3y)(x²+3xy+9y²)">(x – 3y)(x² + 3xy + 9y²)<br>
-    </div>
+    function calculateScore() {
+        let correct = 0;
+        userAnswers.forEach((answer, index) => {
+            if (answer === parseInt(_ans[index])) correct++;
+        });
+        return correct;
+    }
 
-    <!-- Q12 -->
-    <div class="question">
-      <p>Q12: Factorize x⁶ – y⁶.</p>
-      <input type="radio" name="q12" value="(x-y)(x+y)(x²+y²)(x²-y²)">(x – y)(x + y)(x² + y²)(x² – y²)<br>
-      <input type="radio" name="q12" value="(x³-y³)(x³+y³)">(x³ – y³)(x³ + y³)<br>
-    </div>
+    function showResults() {
+        const score = calculateScore();
+        const percentage = Math.round((score / 17) * 100);
+        
+        document.getElementById('correct-count').textContent = score;
+        document.getElementById('wrong-count').textContent = 17 - score;
+        document.getElementById('score-count').textContent = `${score}/17`;
+        document.getElementById('score-percent').textContent = `${percentage}%`;
+        
+        // Animate circular progress
+        const circle = document.getElementById('progress-circle');
+        const circumference = 2 * Math.PI * 88;
+        const offset = circumference - (percentage / 100) * circumference;
+        setTimeout(() => {
+            circle.style.strokeDashoffset = offset;
+        }, 100);
+        
+        resultsSection.classList.remove('hidden');
+        resultsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
 
-    <!-- Q13 -->
-    <div class="question">
-      <p>Q13: Prove (a+b)³ + (b+c)³ + (c+a)³ – 3(a+b)(b+c)(c+a) = 2(a³+b³+c³–3abc).</p>
-      <input type="radio" name="q13" value="true">True<br>
-      <input type="radio" name="q13" value="false">False<br>
-    </div>
-
-    <!-- Q14 -->
-    <div class="question">
-      <p>Q14: If x+y+z=0, prove x³+y³+z³=3xyz.</p>
-      <input type="radio" name="q14" value="true">True<br>
-      <input type="radio" name="q14" value="false">False<br>
-    </div>
-
-    <!-- Q15 -->
-    <div class="question">
-      <p>Q15: If a+b+c
+    function showReview() {
+        reviewSection.innerHTML = '';
+        questionsData.forEach((item, index) => {
+            const userAnswer = userAnswers[index];
+            const correctAnswer = parseInt(_ans[index]);
+            const isCorrect = userAnswer === correctAnswer;
+            
+            const reviewCard = document.createElement('div');
+            reviewCard.className = `bg-white rounded-xl shadow-md p-6 border-l-4 ${isCorrect ? 'border-green-500' : 'border-red-500'}`;
+            
+            reviewCard.innerHTML = `
+                <div class="flex items-start justify-between mb-3">
+                    <h3 class="text-lg font-semibold text-gray-800 flex-1">${item.q}</h3>
+                    <span class="ml-4 px-3 py-1 rounded-full text-xs font-semibold ${isCorrect ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800'}">
+                        ${isCorrect ? 'Correct' : 'Incorrect'}
+                    </span>
+                </div>
+                <div class="space-y-2 mb-4">
+                    ${item.opts.map((opt, optIndex) => {
+                        let classes = 'block w-full p-3 rounded-lg border-2 text-gray-700';
+                        if (optIndex === correctAnswer) {
+                    
