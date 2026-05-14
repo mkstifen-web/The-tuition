@@ -19,6 +19,15 @@ body{
   background:#0a2a66;
 }
 
+.nav-link{
+  color:white !important;
+  margin-left:10px;
+}
+
+.nav-link:hover{
+  color:#9ec5ff !important;
+}
+
 .hero{
   background:
   linear-gradient(rgba(0,25,70,0.75),rgba(0,25,70,0.75)),
@@ -44,6 +53,12 @@ body{
   padding:10px 20px;
   border-radius:50px;
   text-decoration:none;
+  display:inline-block;
+}
+
+.download-btn:hover{
+  background:#084298;
+  color:white;
 }
 
 footer{
@@ -60,17 +75,69 @@ footer{
 
 <body>
 
+<!-- NAVBAR -->
+
 <nav class="navbar navbar-expand-lg navbar-dark">
 
-<div class="container">
+  <div class="container">
 
-<a class="navbar-brand fw-bold" href="index.html">
-Tuition Classes By Manish
-</a>
+    <a class="navbar-brand fw-bold" href="index.html">
+      Tuition Classes By Manish
+    </a>
 
-</div>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="menu">
+
+      <ul class="navbar-nav ms-auto">
+
+        <li class="nav-item">
+          <a class="nav-link" href="index.html">Home</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="about.html">About</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="courses.html">Courses</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="test/current-test.html">Tests</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link active" href="notes.html">Notes</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="results.html">Results</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="gallery.html">Gallery</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="announcements.html">Notices</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="homework.html">Homework</a>
+        </li>
+
+      </ul>
+
+    </div>
+
+  </div>
 
 </nav>
+
+<!-- HERO -->
 
 <section class="hero">
 
@@ -88,13 +155,17 @@ Download Notes & Study Materials
 
 </section>
 
+<!-- NOTES -->
+
 <section class="py-5">
 
 <div class="container">
 
 <div class="note-box">
 
-<h3>Mathematics Notes - Class 10</h3>
+<h3>
+Mathematics Notes - Class 10
+</h3>
 
 <p class="mt-3">
 Important formulas and practice questions.
@@ -108,13 +179,15 @@ Download PDF
 
 <div class="note-box">
 
-<h3>Science Notes - Class 9</h3>
+<h3>
+Science Notes - Class 9
+</h3>
 
 <p class="mt-3">
 Chapter-wise important explanations.
 </p>
 
-<a href="#" class="download-btn">
+<a href="assets/pdf/science-notes.pdf" class="download-btn">
 Download PDF
 </a>
 
@@ -124,11 +197,17 @@ Download PDF
 
 </section>
 
+<!-- FOOTER -->
+
 <footer>
 
 © 2026 Tuition Classes By Manish | All Rights Reserved
 
 </footer>
+
+<!-- Bootstrap JS -->
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 </html>
